@@ -1,0 +1,165 @@
+.content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 65px 0 0 0;
+    // left: 60px;
+    // top: 60px;
+
+    @include media-breakpoint-up(md) {
+        width: calc(100vw - 90px);
+        // left: 90px;
+        padding: 90px 0 0 90px;
+        // top: 90px;
+    }
+
+    &__title {
+        position: relative;
+
+
+        &--lineTop {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 1px;
+            width: 15%;
+            background-color: $primary-dark;
+            -webkit-transform-origin: bottom left;
+            -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+            // animation: lineHorizontal 1000ms 300ms ease-in-out alternate infinite;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 1px;
+                width: 90%;
+                background-color: $primary-dark;
+                -webkit-transform-origin: right;
+                -ms-transform-origin: right;
+                transform-origin: right;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &--lineRight {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 50%;
+            width: 1px;
+            background-color: $primary-dark;
+            // -webkit-transform-origin: top left;
+            // -ms-transform-origin: top left;
+            // transform-origin: top left;
+            // animation: lineVertical 2000ms 500ms ease-in-out alternate infinite;
+        }
+
+        &--lineLeft {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 50%;
+            width: 1px;
+            background-color: $primary-dark;
+            // -webkit-transform-origin: top left;
+            // -ms-transform-origin: top left;
+            // transform-origin: top left;
+            // animation: lineVertical 2000ms 500ms ease-in-out alternate infinite;
+
+        }
+
+        // @keyframes lineVertical {
+        //     50% {
+        //         height: 70%;
+        //     }
+        
+        //     100% {
+        //         height: 50%;
+        //     }
+        // }
+        // @keyframes lineHorizontal {
+        //     0% {
+        //         width: 15%;
+        //     }
+        
+        //     100% {
+        //         width: 18%;
+        //     }
+        // }
+
+        &--lineBottom {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 15%;
+            background-color: $primary-dark;
+            -webkit-transform-origin: top left;
+            -ms-transform-origin: top left;
+            transform-origin: top left;
+            // animation: lineHorizontal 1000ms 300ms ease-in-out alternate infinite;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                width: 90%;
+                background-color: $primary-dark;
+                -webkit-transform-origin: left;
+                -ms-transform-origin: left;
+                transform-origin: left;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &__num {
+        font-size: 40px;
+        -webkit-text-stroke: 1px $primary-dark;
+        color: white;
+
+        @include media-breakpoint-up(md) {
+            font-size: 80px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 26px;
+        -webkit-text-stroke: 1px $primary-dark;
+        color: white;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include media-breakpoint-up(md) {
+            font-size: 50px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 76px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: 95px;
+        }
+    }
+
+    &__footer {
+        position: fixed;
+        bottom: 60px;
+        left: 13px;
+    }
+
+    &__center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}

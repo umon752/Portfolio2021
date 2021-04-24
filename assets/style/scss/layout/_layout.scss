@@ -1,0 +1,240 @@
+.nav {
+    height: 55px;
+    @include bg-material;
+
+    @include media-breakpoint-up(md) {
+        height: 80px;
+    }
+
+    &__menu {
+        width: calc(100% - 54px);
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-top: 55px;
+        border: 1px solid $primary;
+        transform: translateX(100%) translateY(-1px);
+        background: $light;
+        @include bg-material;
+        @include ease-out;
+
+        @include media-breakpoint-up(md) {
+            width: calc(100% - 79px);
+            margin-top: 80px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+            border: none;
+            position: inherit;
+            height: auto;
+            transform: inherit;
+            background: transparent;
+            background-image: none;
+        }
+
+        &.active {
+            transform: translateX(0px) translateY(-1px);
+            @include ease-out;
+        }
+    }
+
+    &__menu__link {
+        &:hover {
+            @include media-breakpoint-up(lg) {
+                color: lighten($primary, 20%);
+            }
+        }
+        &:hover .nav__menu__link--num {
+            background-color: $primary;
+            color: white;
+            @include linear;
+        }
+        &:hover .nav__menu__link--title {
+            @include media-breakpoint-up(lg) {
+                transform: translateY(8px);
+            }
+        }
+        &:hover .nav__menu__link--caption {
+            @include media-breakpoint-up(lg) {
+                transform: translateY(-3px);
+                opacity: 0;
+            }
+        }
+    }
+
+    &__menu__link--num {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid $primary;
+        position: inherit;
+        @include linear;
+    }
+    &__menu__link--title {
+        @include linear;
+    }
+    &__menu__link--caption {
+        @include linear;
+    }
+
+    &__toggler {
+        border-left: 1px solid $primary;
+        width: 55px;
+        height: 54px;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include media-breakpoint-up(md) {
+            width: 80px;
+            height: 79px;
+        }
+
+        &::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: $primary;
+            position: absolute;
+            top: 35%;
+            right: 50%;
+            transform: translateX(50%) rotate(0deg);
+            @include linear;
+        }
+        &::after {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: $primary;
+            position: absolute;
+            bottom: 35%;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            @include linear;
+        }
+
+        &.active {
+            &::before {
+                top: 50%;
+                right: 13px;
+                transform: translateY(-1px) translateX(1px) rotate(45deg);
+                @include linear;
+
+                @include media-breakpoint-up(md) {
+                    right: 25px;
+                }
+            }
+            &::after {
+                bottom: 50%;
+                left: 13px;
+                transform: translateY(1px) translateX(-1px) rotate(-45deg);
+                @include linear;
+
+                @include media-breakpoint-up(md) {
+                    left: 25px;
+                }
+            }
+
+            
+        }
+    }
+}
+
+.layout__side {
+    width: 55px;
+    height: 100vh;
+    @include bg-material;
+    transform: translateY(-100%);
+    @include linear;
+
+    @include media-breakpoint-up(md) {
+        width: 80px;
+        transform: translateY(-1px);
+    }
+
+    &.active {
+        transform: translateY(-2px);
+        @include linear;
+    }
+
+    &__text {
+        transform: rotate(-90deg);
+    }
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    background-color: lighten($primary, 15%);
+    @include bg-material;
+
+    @include media-breakpoint-up(md) {
+        width: 80px;
+        height: 80px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $primary;
+        width: 100%;
+        height: 100%;
+        transform-origin: 50% 100%;
+        
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: clip-path 0.2s, -webkit-clip-path 0.2s;
+        transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+    }
+
+    & > span {
+        overflow: hidden;
+        mix-blend-mode: lighten;
+    }
+
+    span {
+        display: block;
+        position: relative;
+    }
+
+    &:hover {
+        // width: 65px;
+        // height: 65px;
+
+        // @include media-breakpoint-up(md) {
+        //     width: 90px;
+        //     height: 90px;
+        // }
+
+        &::before {
+            transition-duration: 0.3s;
+            -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+        }
+
+        & > span > span {
+            animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+        }
+    }
+}
+
+@keyframes MoveUpInitial {
+    100% {
+        transform: translate3d(105%,0,0);
+    }
+}
+
+@keyframes MoveUpEnd {
+    0% {
+        transform: translate3d(-100%,0,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+

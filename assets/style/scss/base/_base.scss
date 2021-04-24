@@ -1,0 +1,64 @@
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+body {
+    background-color: $light;
+    @include bg-material;
+    letter-spacing: 1px;
+    width: 100vw;
+    height: 100vh;
+    // min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+a {
+    @include linear;
+
+    &:hover {
+        text-decoration: none;
+        @include linear;
+    }
+}
+
+// button {
+//     @include hover-linear(300ms);
+// }
+
+input {
+    -webkit-appearance: none; // Safari 和 Chrome，於 iOS 移除內建樣式
+    -moz-appearance: none; // Firefox
+    appearance: none;
+}
+
+// 移除 BS4 h1-h6 的預設 margin-bottom
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p {
+    margin-bottom: 0;
+    line-height: 1.5;
+}

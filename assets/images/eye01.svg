@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="26.676px" height="52.5px" viewBox="0 0 26.676 52.5" enable-background="new 0 0 26.676 52.5" xml:space="preserve">
+<g id="N">
+</g>
+<g id="圖層_3">
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="-2515.26" y="-469.415" width="1920" height="1080"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_2_)">
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<g>
+										<g>
+											<g>
+												
+													<image overflow="visible" width="100" height="100" xlink:href="../../../作業/Vue直播班/100-90-3-monochrome.png"  transform="matrix(1 0 0 1 -55.2598 -29.415)">
+												</image>
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="圖層_2">
+	<g>
+		<path fill="#FFFFFF" d="M13.338,51.5C6.535,51.5,1,40.173,1,26.25S6.535,1,13.338,1s12.338,11.327,12.338,25.25
+			S20.141,51.5,13.338,51.5z"/>
+		<path fill="#231815" d="M13.338,1.5c6.417,0,11.838,11.334,11.838,24.75S19.755,51,13.338,51S1.5,39.666,1.5,26.25
+			S6.921,1.5,13.338,1.5 M13.338,0.5C6.248,0.5,0.5,12.029,0.5,26.25S6.248,52,13.338,52s12.838-11.529,12.838-25.75
+			S20.428,0.5,13.338,0.5L13.338,0.5z"/>
+	</g>
+</g>
+</svg>

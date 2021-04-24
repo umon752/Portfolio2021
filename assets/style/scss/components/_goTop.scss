@@ -1,0 +1,45 @@
+.goTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 25px;
+    cursor: pointer;
+    z-index: 1029;
+
+    // img {
+    //     width: 100%;
+    //     // @include media-breakpoint-up(md) {
+    //     //     width: 95%;
+    //     // }
+    // }
+
+    @include media-breakpoint-up(md) {
+        right: 35px;
+        bottom: 30px;
+        width: 30px;
+    }
+
+    
+
+    &:hover {
+        animation: up-down 700ms ease-in-out alternate infinite;
+    }
+}
+
+@keyframes up-down{
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-8px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
