@@ -73,23 +73,37 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 // 換頁
+
+
 const $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 let $section = $('section');
 
 var numOfPages = $section.length - 1; //取得section的數量
 let curPage = 0; //初始頁
 let scrollLock = false;
-
+// mousewheel DOMMouseScroll
 function scrollPage() {
-  //滑鼠滾動
-  $(document).on("mousewheel DOMMouseScroll", function(e) {
-    if (scrollLock) return;
+
+  function touchMoveHandler(e) {
+    if (scrollLock) {return};
     if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
       navigateUp();
     } else {
       navigateDown();
     }
-  });
+  };
+  //滑鼠滾動
+  $(document).on("mousewheel", touchMoveHandler);
+  
+// 監聽手機裝置 touch
+if("ontouchstart" in window){
+  console.log("OK");
+  // el.addEventListener('touchstart', touchStartHandler);
+  // el.addEventListener('touchmove', touchMoveHandler);
+  $(document).on("vmousemove", touchMoveHandler);
+  // el.addEventListener('touchend', touchEndHandler);
+}
+
   //鍵盤上下鍵
   $(document).on("keydown", function(e) {
     if (scrollLock) {
@@ -103,6 +117,7 @@ function scrollPage() {
     }
   });
 }
+
 // goTop
 $('.goTop').click(function (e) {
   navigateUp();
@@ -303,7 +318,7 @@ anime({
 
 // monster
 anime({
-  targets: '.sharp',
+  targets: ['.monster__sharp', '.monster__round'],
   opacity: [0, 1],
   loop: 1,
   duration: 800,
@@ -344,7 +359,7 @@ anime({
 // 畫面動態
 // monster body
 anime({
-  targets: '.sharp',
+  targets: ['.monster__sharp', '.monster__round'],
   translateY: [0, 15],
   loop: true,
   duration: 800,
