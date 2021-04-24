@@ -29,6 +29,7 @@ $(document).ready(function () {
     // };
     // document.addEventListener('mousemove', setCursorPos);
 
+    
     // $('document').mousemove(function (e) {
     //   const { pageX: posX, pageY: posY } = e;
     //   $('.mouse').css('top', `${posY - ($('.mouse').offsetHeight / 2)}px`);
@@ -82,9 +83,11 @@ var numOfPages = $section.length - 1; //取得section的數量
 let curPage = 0; //初始頁
 let scrollLock = false;
 // mousewheel DOMMouseScroll
+
 function scrollPage() {
 
-  function touchMoveHandler(e) {
+  // 監聽滑鼠滑動事件
+  function wheelMoveHandler(e) {
     if (scrollLock) {return};
     if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
       navigateUp();
@@ -92,19 +95,36 @@ function scrollPage() {
       navigateDown();
     }
   };
-  //滑鼠滾動
-  $(document).on("mousewheel", touchMoveHandler);
+  $(document).on("mousewheel", wheelMoveHandler);
   
-// 監聽手機裝置 touch
+
+
+// 監聽手指 touch 事件
 if("ontouchstart" in window){
-  alert("OK");
-  // el.addEventListener('touchstart', touchStartHandler);
+  alert("YES111");
+
+  let startY;
+
+  function touchStart(e) {
+    startY = e.touches[0].pageY;
+  };
+
+  function touchMoveHandler(e) {
+    let moveEndY = e.changedTouches[0].pageY;
+    let Y = moveEndY - startY;
+    // console.log(startY,moveEndY,Y);
+    // console.log(curPage);
+    if ( Y > 0 ) {
+        navigateUp();
+    } else if ( Y < 0 ) {
+        navigateDown();
+    }
+  };
+  document.addEventListener('touchstart', touchStart);
   document.addEventListener('touchmove', touchMoveHandler);
-  // $(document).on("vmousemove", touchMoveHandler);
-  // el.addEventListener('touchend', touchEndHandler);
 }
 
-  //鍵盤上下鍵
+  // 監聽鍵盤上下鍵
   $(document).on("keydown", function(e) {
     if (scrollLock) {
       return;
@@ -118,7 +138,7 @@ if("ontouchstart" in window){
   });
 }
 
-// goTop
+// 監聽點擊 goTop
 $('.goTop').click(function (e) {
   navigateUp();
 });
@@ -132,6 +152,7 @@ function pagination() {
   });
 };
 
+// 整頁往上移動
 function navigateUp () {
   if (curPage === 0) {
     return;
@@ -140,13 +161,14 @@ function navigateUp () {
   pagination();
 };
 
+// 整頁往下移動
 function navigateDown() {
   if (curPage === numOfPages) return;
   curPage++;
   pagination();
 };
 
-
+// 頁面滑動
 $(function() {
   scrollPage();
 });
@@ -192,8 +214,6 @@ $(function() {
 
 /* Anime */
 // 載入動畫
-
-
 
 // 數字
 anime({

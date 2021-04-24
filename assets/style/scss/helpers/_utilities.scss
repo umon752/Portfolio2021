@@ -33,3 +33,9 @@
 .font-size-xs {
     font-size: 13px; // 13px
 }
+
+.overflow-lg-hidden {
+    @include media-breakpoint-up(lg) {
+        overflow: hidden;
+    }
+}
