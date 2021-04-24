@@ -97,10 +97,10 @@ function scrollPage() {
   
 // 監聽手機裝置 touch
 if("ontouchstart" in window){
-  console.log("OK");
+  alert("OK");
   // el.addEventListener('touchstart', touchStartHandler);
-  // el.addEventListener('touchmove', touchMoveHandler);
-  $(document).on("vmousemove", touchMoveHandler);
+  document.addEventListener('touchmove', touchMoveHandler);
+  // $(document).on("vmousemove", touchMoveHandler);
   // el.addEventListener('touchend', touchEndHandler);
 }
 
