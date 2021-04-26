@@ -6,11 +6,11 @@
     transition: ease-out 300ms;
 }
 
-@mixin img-cover($height) {
-    width: $height;
+@mixin img-cover($width,$height,$position) {
+    width: $width;
     height: $height;
     object-fit: cover;
-    object-position: center;
+    object-position: $position;
 }
 
 @mixin bg-cover($url, $height) {

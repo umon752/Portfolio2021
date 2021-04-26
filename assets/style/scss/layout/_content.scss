@@ -3,11 +3,14 @@
     height: 100vh;
     position: relative;
     padding: 65px 0 0 0;
+    // top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     // left: 60px;
     // top: 60px;
 
     @include media-breakpoint-up(md) {
-        width: calc(100vw - 90px);
+        // width: calc(100vw - 90px);
         // left: 90px;
         padding: 90px 0 0 90px;
         // top: 90px;
@@ -75,7 +78,7 @@
         //     50% {
         //         height: 70%;
         //     }
-        
+
         //     100% {
         //         height: 50%;
         //     }
@@ -84,7 +87,7 @@
         //     0% {
         //         width: 15%;
         //     }
-        
+
         //     100% {
         //         width: 18%;
         //     }
@@ -156,10 +159,128 @@
         left: 13px;
     }
 
-    &__center {
+    // &__center {
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translateX(-50%) translateY(-50%);
+    // }
+}
+
+// .content-wrap {
+//     width: 100%;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translateX(-50%) translateY(-50%);
+// }
+.content__container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    @include media-breakpoint-up(sm) {
+        max-width: 540px;
+    }
+
+    @include media-breakpoint-up(md) {
+        max-width: 720px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 960px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1300px;
+    }
+}
+
+.content__card {
+    height: 400px;
+
+
+    &:hover>.content__card__img {
+        // object-position: bottom;
+        top: -100%;
+        // transform: translateY(-50%);
+        @include linear;
+    }
+
+    &:hover>.content__card__imgMask {
+        @include linear;
+        opacity: .5;
+        // transform: translateX(0);
+    }
+
+    &:hover .content__card__imgIcon {
+        @include linear;
+        opacity: .8;
+    }
+
+    &:hover .content__card__imgIcon--size {
+        transition: all 100ms ease-out;
+        transform: translateY(0);
+    }
+
+    &__img {
+        // @include img-cover(100%, 400px, top);
+        width: 100%;
+        // object-fit: cover;
+        // object-position: bottom;
+        position: absolute;
+        top: 0;
+        @include linear;
+        // &::after {
+        //     content: '';
+        //     width: 100%;
+        // height: 100%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // background: $primary;
+        // opacity: 0;
+        // }
+    }
+
+    &__imgMask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $primary;
+        opacity: 0;
+        // transform: translateX(-100%);
+        @include linear;
+
+
+    }
+
+    &__imgIcon {
+        display: block;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+        @include linear;
+
+        &--size {
+            width: 80px;
+            height: 80px;
+            transform: translateY(100%);
+            // @include ease-out;
+            transition: all 100ms ease-out;
+        }
+
+        .material-icons {
+            line-height: 1;
+        }
     }
 }

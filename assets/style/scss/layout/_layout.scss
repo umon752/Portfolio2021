@@ -43,7 +43,7 @@
     &__menu__link {
         &:hover {
             @include media-breakpoint-up(lg) {
-                color: lighten($primary, 20%);
+                color: lighten($primary, 10%);
             }
         }
         &:hover .nav__menu__link--num {
@@ -168,7 +168,7 @@
     width: 55px;
     height: 55px;
     overflow: hidden;
-    background-color: lighten($primary, 15%);
+    background-color: lighten($primary, 10%);
     @include bg-material;
 
     @include media-breakpoint-up(md) {

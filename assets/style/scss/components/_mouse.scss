@@ -1,8 +1,27 @@
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    z-index: 9998;
+    pointer-events: none;
+    &>span {
+        position: relative;
+        flex: 1;
+        height: 100%;
+        background-color: #fff;
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+}
 .mouse {
-    z-index: 9999;
+    z-index: 20000;
     width: 55px;
     height: 55px;
     position: fixed;
+    top: 0;
     left: 0;
     // background-color: rgb(255, 218, 96);
     // opacity: .7;
@@ -12,6 +31,7 @@
     position: absolute;
     // mix-blend-mode: hard-light;
     // isolation: isolate;
+    // transform: translate3d(0,0,0);
     pointer-events: none;
     transition: 0.1s linear;
 

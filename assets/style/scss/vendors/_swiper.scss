@@ -1,0 +1,32 @@
+// 箭頭樣式
+.swiper-button-prev,
+.swiper-button-next {
+    @include linear;
+    width: 45px;
+    height: 45px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        opacity: .8;
+        @include linear;
+    }
+
+    &::after {
+        content: '';
+    }
+}
+
+.swiper-button-prev {
+    left: -70px
+}
+.swiper-button-next {
+    right: -70px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 16px;
+}

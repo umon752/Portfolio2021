@@ -11,12 +11,16 @@
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <!-- Animate（CDN） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Material Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Swiper（CDN） -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"> -->
     <link rel="stylesheet" href="./assets/style/css/all.css">
 </head>
 
-<body class="overflow-hidden">
-    <div class="overflow-hidden">
+<body>
+    <div class="js-wrap overflow-hidden">
         <!-- loaging -->
 
         <!-- layout -->
@@ -94,7 +98,7 @@
                 class="logo text-white border border-primary-dark d-block h5 h3-md font-weight-light d-flex justify-content-center align-items-center fixed-top">
                 <span>
                     <span>
-                        < / >
+                        < />
                     </span>
                 </span>
             </a>
@@ -105,15 +109,13 @@
         <img src="./assets/images/arrow.svg" class="goTop">
         <!-- </a> -->
 
-        <!-- mouse -->
-        <div class="mouse d-none d-lg-block"></div>
 
 
         <!-- content -->
         <!-- 00 -->
-        <section class="content w-100">
+        <section class="content">
             <!-- content - head -->
-            <div class="d-flex justify-content-between align-items-center m-3">
+            <div class="d-flex justify-content-between align-items-center m-3 mx-lg-4 mt-lg-4 mb-lg-5 mb-xl-3">
                 <div class="content__title">
                     <div class="content__title--lineTop"></div>
                     <div class="content__title--lineLeft"></div>
@@ -153,35 +155,26 @@
                     <img src="./assets/images/lightning.svg" class="mr-2">
                     <div>
                         <h2 class="font-size-xs h4-md text-primary-dark mb-1">2021 by Yi-Chieh Lee</h2>
-                        <div class="js-content-sub d-none d-md-flex">
+
+                        <div class="js-content-sub d-none d-md-flex p-1">
                             <div class="font-size-sm text-primary bg-white border border-primary px-1">Develop
                             </div>
-                            <div class="font-size-sm text-white bg-primary border border-primary text-nowrap px-1">Scss
-                                /
-                                Bootstrap / jQuery / AOS</div>
+                            <div
+                                class="overflow-hidden font-size-sm text-white bg-primary border border-primary text-nowrap px-1">
+                                <div class="js-content-sub-text">Scss / Bootstrap / jQuery / AOS</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="content__footer d-flex d-md-none align-items-center mt-2">
-                <div>
-                    <h2 class="font-size-sm h4-md text-primary-dark mb-1">2021 by Yi-Chieh Lee</h2>
-                    <div class="d-flex">
-                        <div class="font-size-xs text-primary bg-white border border-primary px-1">Develop
-                        </div>
-                        <div class="font-size-xs text-white bg-primary border border-primary px-1">Scss /
-                            Bootstrap / JS / Anime</div>
-                    </div>
-                </div>
-            </div> -->
             <h2 class="content__subtitle font-weight-bold text-nowrap">PORTFOLIO 作 品 展 示</h2>
+
         </section>
 
         <!-- 01 -->
-        <section class="content w-100">
+        <section class="content">
             <!-- content - head -->
-            <div class="d-flex justify-content-between align-items-center m-3">
+            <div class="d-flex justify-content-between align-items-center m-3 mx-lg-4 mt-lg-4 mb-lg-5 mb-xl-3">
                 <div class="content__title">
                     <div class="content__title--lineTop"></div>
                     <div class="content__title--lineLeft"></div>
@@ -205,14 +198,10 @@
                         <div class="monster__eyeLeft mr-3 mr-md-4">
                             <div class="monster__eyeRight--white"></div>
                             <div class="monster__eyeRight--black"></div>
-                            <!-- <img src="./assets/images/eye01.svg" class="round__eyeLeft--white">
-                            <img src="./assets/images/eyeball01.svg" class="round__eyeLeft--black"> -->
                         </div>
                         <div class="monster__eyeRight">
                             <div class="monster__eyeRight--white"></div>
                             <div class="monster__eyeRight--black"></div>
-                            <!-- <img src="./assets/images/eye01.svg" class="round__eyeRight--white">
-                            <img src="./assets/images/eyeball01.svg" class="round__eyeRight--black"> -->
                         </div>
                     </div>
                 </div>
@@ -229,9 +218,9 @@
         </section>
 
         <!-- 02 -->
-        <section class="content w-100">
+        <section class="content">
             <!-- content - head -->
-            <div class="d-flex justify-content-between align-items-center m-3">
+            <div class="d-flex justify-content-between align-items-center m-3 mx-lg-4 mt-lg-4 mb-lg-5 mb-xl-3">
                 <div class="content__title">
                     <div class="content__title--lineTop"></div>
                     <div class="content__title--lineLeft"></div>
@@ -247,28 +236,108 @@
             </div>
 
             <!-- content - center -->
-            <div class="content__center d-flex flex-column align-items-center">
-                <!-- monster -->
-                <!-- <div class="monster__round">
-                    <img src="./assets/images/body02.svg">
-                    <div class="monster__round__eye d-flex">
-                        <div class="monster__eyeLeft mr-3 mr-md-4">
-                            <div class="monster__eyeRight--white"></div>
-                            <div class="monster__eyeRight--black"></div>
-                            <img src="./assets/images/eye01.svg" class="round__eyeLeft--white">
-                            <img src="./assets/images/eyeball01.svg" class="round__eyeLeft--black">
-                        </div>
-                        <div class="monster__eyeRight">
-                            <div class="monster__eyeRight--white"></div>
-                            <div class="monster__eyeRight--black"></div>
-                            <img src="./assets/images/eye01.svg" class="round__eyeRight--white">
-                            <img src="./assets/images/eyeball01.svg" class="round__eyeRight--black">
-                        </div>
-                    </div>
-                </div> -->
+            <!-- Swiper -->
+            <div class="content__container mt-5">
+                <div class="swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide border border-primary-dark bg-white p-3">
+                            <a href="#"
+                                class="content__card d-block position-relative overflow-hidden border border-primary-dark mb-2">
+                                <img src="./assets/images/EXHIBINECTION.jpg" class="content__card__img">
+                                <div class="content__card__imgMask">
+                                </div>
+                                <div class="content__card__imgIcon overflow-hidden">
+                                    <div
+                                        class="content__card__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
+                                        <span class="material-icons h1">
+                                            link
+                                        </span>
+                                        <span>Link</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <h4 class="h6 text-dark font-weight-bold mb-1">EXHIBINECTION</h4>
+                            <div class="">
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Scss</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Tailwind</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">JS</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Anime</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">AOS</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide border border-primary-dark bg-white p-3">
+                            <a href="#"
+                                class="content__card d-block position-relative overflow-hidden border border-primary-dark mb-2">
+                                <img src="./assets/images/ALOHA.jpg" class="content__card__img">
+                                <div class="content__card__imgMask">
+                                </div>
+                                <div class="content__card__imgIcon overflow-hidden">
+                                    <div
+                                        class="content__card__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
+                                        <span class="material-icons h1">
+                                            link
+                                        </span>
+                                        <span>Link</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <h4 class="h6 text-dark font-weight-bold mb-1">EXHIBINECTION</h4>
+                            <div class="">
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Scss</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Tailwind</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">JS</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Anime</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">AOS</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide border border-primary-dark bg-white p-3">
+                            <a href="#"
+                                class="content__card d-block position-relative overflow-hidden border border-primary-dark mb-2">
+                                <img src="./assets/images/WOWOROOM.jpg" class="content__card__img">
+                                <div class="content__card__imgMask">
+                                </div>
+                                <div class="content__card__imgIcon overflow-hidden">
+                                    <div
+                                        class="content__card__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
+                                        <span class="material-icons h1">
+                                            link
+                                        </span>
+                                        <span>Link</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <h4 class="h6 text-dark font-weight-bold mb-1">EXHIBINECTION</h4>
+                            <div class="">
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Scss</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Tailwind</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">JS</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">Anime</span>
+                                <span class="bg-secondary text-white font-size-xs font-weight-light p-1">AOS</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next bg-primary text-white rounded-circle">
+                    <span class="material-icons">
+                        arrow_forward
+                    </span>
+                </div>
+
+                <div class="swiper-button-prev bg-primary text-white rounded-circle">
+                    <span class="material-icons">
+                        arrow_back
+                    </span>
+                </div>
             </div>
         </section>
 
+
+        <div class="mask">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <!-- mouse -->
+        <div class="mouse d-none d-lg-inline-block"></div>
 
 
     </div>
@@ -278,6 +347,8 @@
     <!-- AOS（CDN） -->
     <!-- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> -->
     <!-- <script src="./assets/js/vendors/parallax.min.js"></script> -->
+    <!-- Swiper（CDN） -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/js/vendors/jquery-3.6.0.min.js"></script>
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> -->
     <!-- <script src="./assets/js/vendors/jquery.mobile-1.4.5.min.js"></script> -->
