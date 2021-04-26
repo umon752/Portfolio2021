@@ -1,7 +1,7 @@
-*:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
+// *:focus {
+//     outline: none !important;
+//     box-shadow: none !important;
+// }
 
 body {
     background-color: $light;
@@ -9,7 +9,6 @@ body {
     letter-spacing: 1px;
     width: 100vw;
     height: 100vh;
-    // min-height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -39,11 +38,11 @@ a {
 //     @include hover-linear(300ms);
 // }
 
-input {
-    -webkit-appearance: none; // Safari 和 Chrome，於 iOS 移除內建樣式
-    -moz-appearance: none; // Firefox
-    appearance: none;
-}
+// input {
+//     -webkit-appearance: none; // Safari 和 Chrome，於 iOS 移除內建樣式
+//     -moz-appearance: none; // Firefox
+//     appearance: none;
+// }
 
 // 移除 BS4 h1-h6 的預設 margin-bottom
 h1,

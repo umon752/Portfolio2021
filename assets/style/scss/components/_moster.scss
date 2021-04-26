@@ -1,0 +1,85 @@
+// 尖角怪物
+.monster__sharp {
+    position: relative;
+    width: 280px;
+
+    @include media-breakpoint-up(md) {
+        width: 427px;
+    }
+
+    &__eye {
+        position: absolute;
+        transform: translateY(50%);
+        top: 140px;
+        left: 96px;
+        transform-origin: center;
+
+        @include media-breakpoint-up(md) {
+            width: auto;
+            left: 150px;
+            top: 200px;
+        }
+    }
+}
+
+// 圓形怪物
+.monster__round {
+    position: relative;
+    width: 234px;
+
+    @include media-breakpoint-up(md) {
+        width: 386px;
+    }
+
+    &__eye {
+        position: absolute;
+        transform: translateY(50%);
+        top: 62px;
+        left: 34px;
+        transform-origin: center;
+
+        @include media-breakpoint-up(md) {
+            width: auto;
+            left: 50px;
+            top: 105px;
+        }
+    }
+}
+
+// 怪物眼睛
+.monster__eyeLeft, .monster__eyeRight {
+    position: relative;
+}
+
+.monster__eyeRight {
+    left: 22px;
+    @include media-breakpoint-up(md) {
+        left: 28px;
+    }
+}
+
+.monster__eyeLeft--white, .monster__eyeRight--white {
+    position: absolute;
+    bottom: 50%;
+    border: 1px solid $dark;
+    background: rgba(255, 255, 255, 0.432);
+    width: 20px;
+    border-radius: 50%;
+
+    @include media-breakpoint-up(md) {
+        width: 28px;
+    }
+}
+
+.monster__eyeLeft--black, .monster__eyeRight--black {
+    position: absolute;
+    bottom: calc(-50% + 2px);
+    left: 0;
+    background: $dark;
+    width: 14px;
+    border-radius: 50%;
+
+    @include media-breakpoint-up(md) {
+        width: 19px;
+    }
+}

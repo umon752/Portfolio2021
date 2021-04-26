@@ -1,0 +1,69 @@
+.customCard {
+    height: 90%;
+    @include media-breakpoint-up(md) {
+        height: 85%;
+    }
+
+    @include media-breakpoint-up(xl) {
+        height: 400px;
+    }
+
+
+    &:hover>.customCard__img {
+        @include linear;
+    }
+
+    &:hover>.customCard__imgMask {
+        @include linear;
+        opacity: .5;
+    }
+
+    &:hover .customCard__imgIcon {
+        @include linear;
+        opacity: .8;
+    }
+
+    &:hover .customCard__imgIcon--size {
+        transition: all 100ms ease-out;
+        transform: translateY(0);
+    }
+
+    &__img {
+        width: 100%;
+        @include linear;
+    }
+
+    &__imgMask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $primary;
+        opacity: 0;
+        @include linear;
+
+
+    }
+
+    &__imgIcon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+        @include linear;
+
+        &--size {
+            width: 80px;
+            height: 80px;
+            transform: translateY(100%);
+            transition: all 100ms ease-out;
+        }
+
+        .material-icons {
+            line-height: .5;
+        }
+    }
+}

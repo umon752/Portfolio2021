@@ -6,20 +6,18 @@
     cursor: pointer;
     z-index: 1029;
 
-    // img {
-    //     width: 100%;
-    //     // @include media-breakpoint-up(md) {
-    //     //     width: 95%;
-    //     // }
-    // }
-
     @include media-breakpoint-up(md) {
         right: 35px;
         bottom: 30px;
         width: 30px;
     }
 
-    
+    @media (min-width: 1280px) {
+        display: none;
+    }
+    @media (min-width: 1281px) {
+        display: block;
+    }
 
     &:hover {
         animation: up-down 700ms ease-in-out alternate infinite;

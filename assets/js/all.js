@@ -103,6 +103,24 @@ $(document).ready(function () {
     navigateUp();
   });
 
+  // 監聽 navbar
+  $('.js-navLink-00').click(function (e) {
+    curPage = 0;
+    pagination();
+  });
+  $('.js-navLink-01').click(function (e) {
+    curPage = 1;
+    pagination();
+  });
+  $('.js-navLink-02').click(function (e) {
+    curPage = 2;
+    pagination();
+  });
+  $('.js-navLink-03').click(function (e) {
+    curPage = 3;
+    pagination();
+  });
+
   // 滑動效果、滑動開關
   function pagination() {
     scrollLock = true;
@@ -149,7 +167,7 @@ $(document).ready(function () {
     $('.content__subtitle').css('display', 'none');
   }
 
-  if ($(window).width() >= 992) {
+  if ($(window).width() >= 1300) {
     // nav 載入動畫
     navMoveDesktop();
   }
@@ -645,16 +663,54 @@ anime.timeline({
 function swiper() {
   // 只在 index、product、product_detail 時執行
   // 當裝置寬度為 768px 時執行
-  if (window.screen.width >= 1200) {
+  if ($(window).width() < 992) {
 
     // 載入 Swiper 
     const swiper = new Swiper('.swiper-container', {
       autoplay: {
         delay: 10000,
       },
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      spaceBetween: 15,
+      slidesPerGroup: 2,
+      loop: false,
+      // loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+  } else if (992 <= $(window).width() < 1200) {
+
+    // 載入 Swiper 
+    const swiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 5000,
+      },
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      spaceBetween: 30,
+      slidesPerGroup: 2,
+      loop: false,
+      // loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+  } else if (1200 <= $(window).width()) {
+
+    // 載入 Swiper 
+    const swiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 5000,
+      },
       slidesPerView: 3,
       spaceBetween: 30,
-      // slidesPerGroup: 3,
+      slidesPerGroup: 3,
       // slidesPerColumn: 2,
       loop: false,
       // loopFillGroupWithBlank: true,
@@ -664,16 +720,19 @@ function swiper() {
       },
     });
 
-    // 滑鼠摸到暫停輪播
-    swiper.el.onmouseover = function () {
-      swiper.autoplay.stop();
-    };
-
-    // 滑鼠離開繼續輪播
-    swiper.el.onmouseleave = function () {
-      swiper.autoplay.start();
-    };
+        // // 滑鼠摸到暫停輪播
+        swiper.el.onmouseover = function () {
+          swiper.autoplay.stop();
+        };
+    
+        // 滑鼠離開繼續輪播
+        swiper.el.onmouseleave = function () {
+          swiper.autoplay.start();
+        };
 
   }
+
+  
+
 };
 swiper();

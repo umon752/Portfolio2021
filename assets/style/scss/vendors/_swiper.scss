@@ -2,8 +2,18 @@
 .swiper-button-prev,
 .swiper-button-next {
     @include linear;
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
+
+    @include media-breakpoint-up(xl) {
+        width: 35px;
+        height: 35px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        width: 45px;
+        height: 45px;
+    }
 
     &:focus {
         outline: none;
@@ -19,14 +29,58 @@
     }
 }
 
-.swiper-button-prev {
-    left: -70px
-}
-.swiper-button-next {
-    right: -70px;
-}
-
 .swiper-button-prev:after,
 .swiper-button-next:after {
     font-size: 16px;
+}
+
+// 箭頭距離
+.swiper-button-prev {
+    left: -20px;
+
+    @include media-breakpoint-up(xl) {
+        left: -36px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        left: -50px;
+    }
+}
+
+.swiper-button-next {
+    right: -20px;
+
+    @include media-breakpoint-up(xl) {
+        right: -40px;
+    }
+    @include media-breakpoint-up(xxl) {
+        right: -50px;
+    }
+}
+
+// 點點樣式
+.swiper-pagination-bullet-active {
+    background-color: $primary;
+}
+
+.swiper-container {
+    height: 100%;
+}
+
+.swiper-slide {
+    height: calc((100% - 15px) / 2);
+    @include media-breakpoint-up(lg) {
+        height: calc((100% - 30px) / 2);
+    }
+}
+
+
+
+/* custom */
+.swiper__content {
+    height: 75%;
+    max-width: calc(100% - 30px);
+    @include media-breakpoint-up(xl) {
+        height: auto;
+    }
 }

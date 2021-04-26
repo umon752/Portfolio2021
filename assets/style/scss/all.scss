@@ -7,11 +7,18 @@
 @import "./helpers/utilities";
 @import "./base/base";
 
+
+
 @import "./vendors/swiper";
 
-@import "./components/mouse";
+
+
+// @import "./components/mouse";
 @import "./components/goTop";
+@import "./components/moster";
+@import "./components/customCard";
+
+
 
 @import "./layout/layout";
 @import "./layout/content";
-@import "./pages/moster";

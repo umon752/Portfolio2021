@@ -18,13 +18,7 @@
     @include h1-h6(-lg);
 }
 
-// .cursor-pointer {
-//     cursor: pointer;
-// }
 
-// .letter-spacing {
-//     letter-spacing: .2rem;
-// }
 
 .font-size-sm {
     font-size: $font-size-sm; // 14px
@@ -37,5 +31,27 @@
 .overflow-lg-hidden {
     @include media-breakpoint-up(lg) {
         overflow: hidden;
+    }
+}
+
+.h-xl-auto {
+    @include media-breakpoint-up(xl) {
+        height: auto !important;
+    }
+}
+
+.font-weight-md-bold {
+    @include media-breakpoint-up(md) {
+        font-weight: bold;
+    }
+}
+
+.img-cover {
+    @include img-cover(auto,100%,center);
+}
+
+.w-xl-auto {
+    @include media-breakpoint-up(xl) {
+        width: auto !important;
     }
 }
