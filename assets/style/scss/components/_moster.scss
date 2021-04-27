@@ -47,18 +47,21 @@
 }
 
 // 怪物眼睛
-.monster__eyeLeft, .monster__eyeRight {
+.monster__eyeLeft,
+.monster__eyeRight {
     position: relative;
 }
 
 .monster__eyeRight {
     left: 22px;
+
     @include media-breakpoint-up(md) {
         left: 28px;
     }
 }
 
-.monster__eyeLeft--white, .monster__eyeRight--white {
+.monster__eyeLeft--white,
+.monster__eyeRight--white {
     position: absolute;
     bottom: 50%;
     border: 1px solid $dark;
@@ -71,7 +74,8 @@
     }
 }
 
-.monster__eyeLeft--black, .monster__eyeRight--black {
+.monster__eyeLeft--black,
+.monster__eyeRight--black {
     position: absolute;
     bottom: calc(-50% + 2px);
     left: 0;

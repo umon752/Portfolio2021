@@ -8,14 +8,13 @@
     <title>Portfolio | Yi-Chieh Lee | 2021</title>
     <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
     <!-- AOS（CDN） -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Animate（CDN） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Material Icon -->
+    <!-- Material Icon（CDN） -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Swiper（CDN） -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"> -->
     <link rel="stylesheet" href="./assets/style/css/all.css">
 </head>
 
@@ -102,16 +101,22 @@
                 class="js-navLink-00 logo text-white border border-primary-dark d-block h5 h3-md font-weight-light d-flex justify-content-center align-items-center fixed-top">
                 <span>
                     <span>
-                        < />
+                        < / >
                     </span>
                 </span>
             </a>
         </h1>
 
         <!-- layout - goTop -->
-        <!-- <a href="#" class=" bg-info"> -->
-        <img src="./assets/images/arrow.svg" class="goTop">
-        <!-- </a> -->
+        <img src="./assets/images/arrow.svg" class="goTop d-none d-xl-block">
+
+        <!-- layout - scroll -->
+        <a href="#" class="scroll font-size-sm h6-md text-primary-dark d-flex align-items-center d-md-none">
+            <span class="js-scroll material-icons">
+                arrow_drop_down
+            </span>
+            Scroll
+        </a>
 
 
 
@@ -151,16 +156,23 @@
                     </div>
                     <!-- text -->
                     <div class="js-content-text d-flex align-items-center mt-5 mt-md-2">
-                        <img src="./assets/images/lightning.svg" class="mr-2">
-                        <div>
+                        <img src="./assets/images/lightning.svg" class="d-none d-md-blockmr-2">
+                        <div class="text-center text-md-left">
                             <h2 class="font-size-xs h4-md text-primary-dark mb-1">2021 by Yi-Chieh Lee</h2>
-
+                            <div class="js-content-sub d-flex d-md-none">
+                                <div class="font-size-xs text-primary-dark bg-white border border-primary px-1">
+                                    PORTFOLIO</div>
+                                <div
+                                    class="overflow-hidden font-size-xs text-white bg-primary border border-primary text-nowrap px-1">
+                                    <div class="js-content-sub-text font-weight-light">作品展示</div>
+                                </div>
+                            </div>
                             <div class="js-content-sub d-none d-md-flex p-1">
                                 <div class="font-size-sm text-primary bg-white border border-primary px-1">Develop
                                 </div>
                                 <div
                                     class="overflow-hidden font-size-sm text-white bg-primary border border-primary text-nowrap px-1">
-                                    <div class="js-content-sub-text">Scss / Bootstrap / JS + jQuery / Anime</div>
+                                    <div class="js-content-sub-text">Scss / BS4 / JS + jQuery / Anime / AOS</div>
                                 </div>
                             </div>
                         </div>
@@ -168,13 +180,14 @@
                 </div>
 
                 <!-- content - footer -->
-                <h2 class="content__block__subtitle font-weight-bold text-nowrap">PORTFOLIO 作 品 展 示</h2>
+                <h2 class="content__block__subtitle font-weight-bold text-nowrap d-none d-md-block">PORTFOLIO 作 品 展 示
+                </h2>
             </div>
         </section>
 
         <!-- content - curPage 01 -->
         <section class="content">
-            <div class="content__block">
+            <div class="content__block" data-aos="fade-up">
 
                 <!-- content - head -->
                 <div class="content__block__title">
@@ -221,7 +234,7 @@
 
         <!-- content - curPage 02 -->
         <section class="content">
-            <div class="content__block">
+            <div class="content__block" data-aos="fade-up">
 
                 <!-- content - head -->
                 <div class="content__block__title">
@@ -253,14 +266,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">EXHIBINECTION
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        EXHIBINECTION
                                     </h4>
                                     <div class="d-none d-md-block">
                                         <span
@@ -285,14 +300,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">ALOHA</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        ALOHA</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -316,14 +333,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">Fixie</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        Fixie</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -345,14 +364,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">Jewellery</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        Jewellery</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -376,14 +397,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">HomeStudio</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        HomeStudio</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -405,14 +428,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">PlantRoom</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        PlantRoom</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -434,15 +459,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
-
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">WOWOROOM - 前台
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        WOWOROOM - 前台
                                     </h4>
                                     <div class="d-none d-md-block">
                                         <span
@@ -469,15 +495,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
-
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">WOWOROOM - 後台
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        WOWOROOM - 後台
                                     </h4>
                                     <div class="d-none d-md-block">
                                         <span
@@ -503,14 +530,16 @@
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">MaskMap</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        MaskMap</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -520,21 +549,31 @@
                                 </li>
                             </ul>
                             <!-- Add Pagination -->
-                            <div class="swiper-pagination d-xl-none"></div>
+                            <!-- <div class="swiper-pagination d-xl-none"></div> -->
                         </div>
 
                         <!-- Add Arrows -->
-                        <div class="swiper-button-next bg-primary text-white rounded-circle d-none d-xl-flex">
-                            <span class="material-icons">
+                        <div class="swiper-button-next d-flex">
+                            <!-- <span class="material-icons">
                                 arrow_forward
-                            </span>
+                            </span> -->
                         </div>
-
-                        <div class="swiper-button-prev bg-primary text-white rounded-circle d-none d-xl-flex">
+                        <!-- <div class="swiper-button-next text-primary d-xl-none">
                             <span class="material-icons">
-                                arrow_back
+                                arrow_forward_ios
                             </span>
+                        </div> -->
+
+                        <div class="swiper-button-prev d-flex">
+                            <!-- <span class="material-icons">
+                                arrow_back
+                            </span> -->
                         </div>
+                        <!-- <div class="swiper-button-prev text-primary d-xl-none">
+                            <span class="material-icons">
+                                arrow_back_ios
+                            </span>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -542,7 +581,7 @@
 
         <!-- content - curPage 03 -->
         <section class="content">
-            <div class="content__block">
+            <div class="content__block" data-aos="fade-up">
 
                 <!-- content - head -->
                 <div class="content__block__title">
@@ -552,7 +591,7 @@
                     <div class="content__block__title--lineRight"></div>
                     <h3
                         class="h5 h2-md font-weight-bold text-primary d-flex flex-column justify-content-center align-items-center py-2 px-3 py-md-2 px-md-4">
-                        <span>Portfolio</span>
+                        <span>Others</span>
                         <span class="font-weight-normal h6 h3-md">好玩練習</span>
                     </h3>
                 </div>
@@ -562,26 +601,27 @@
                 <div class="content__block__center position-relative">
                     <div class="container">
                         <ul class="row">
-                            <li class="col-6">
-                                <div class="border border-primary-dark bg-white p-1 p-md-2">
+                            <li class="col-6 h-100">
+                                <div class="border border-primary-dark bg-white h-100 p-1 p-md-2">
                                     <a href="https://codepen.io/Yi-Chieh/pen/mdONQrg?editors=1011"
                                         class="customCard d-block position-relative overflow-hidden border border-primary-dark mb-1"
                                         target="_blank">
-                                        <img src="./assets/images/Ajax.jpg" class="customCard__img img-cover"
-                                            style="height: 400px;">
+                                        <img src="./assets/images/Ajax.jpg" class="customCard__img img-cover">
                                         <div class="customCard__imgMask">
                                         </div>
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">Sign up / Login
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        Sign up / Login
                                     </h4>
                                     <div class="d-none d-md-block">
                                         <span
@@ -593,26 +633,27 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="col-6">
-                                <div class="border border-primary-dark bg-white p-1 p-md-2">
+                            <li class="col-6 h-100">
+                                <div class="border border-primary-dark bg-white h-100 p-1 p-md-2">
                                     <a href="https://umon752.github.io/ShinyCard/"
                                         class="customCard d-block position-relative overflow-hidden border border-primary-dark mb-1"
                                         target="_blank">
-                                        <img src="./assets/images/ShinyCard.jpg" class="customCard__img img-cover"
-                                            style="height: 400px;">
+                                        <img src="./assets/images/ShinyCard.jpg" class="customCard__img img-cover">
                                         <div class="customCard__imgMask">
                                         </div>
                                         <div class="customCard__imgIcon overflow-hidden">
                                             <div
                                                 class="customCard__imgIcon--size bg-white border border-primary-dark d-flex flex-column justify-content-center align-items-center p-4">
-                                                <span class="material-icons h1">
+                                                <span class="material-icons h4 h1-md">
                                                     link
                                                 </span>
-                                                <span>Demo</span>
+                                                <span class="font-size-xs h6-md">Demo</span>
                                             </div>
                                         </div>
                                     </a>
-                                    <h4 class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">ShinyCard</h4>
+                                    <h4
+                                        class="font-size-xs h6-md font-weight-md-bold text-primary-dark text-center text-md-left">
+                                        ShinyCard</h4>
                                     <div class="d-none d-md-block">
                                         <span
                                             class="bg-secondary text-white font-size-xs font-weight-light px-1">Scss</span>
@@ -635,7 +676,7 @@
         </div> -->
 
         <!-- mouse -->
-        <!-- <div class="mouse d-none d-lg-inline-block"></div> -->
+        <!-- <div class="mouse d-none d-lg-inline-block fixed-top"></div> -->
 
     </div>
 
@@ -644,14 +685,11 @@
     <!-- Anime（CDN） -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- AOS（CDN） -->
-    <!-- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> -->
-    <!-- <script src="./assets/js/vendors/parallax.min.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Swiper（CDN） -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- jquery -->
     <script src="./assets/js/vendors/jquery-3.6.0.min.js"></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> -->
-    <!-- <script src="./assets/js/vendors/jquery.mobile-1.4.5.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script> -->
     <script src="./assets/js/all.js"></script>
 </body>
 

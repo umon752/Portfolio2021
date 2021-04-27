@@ -21,7 +21,7 @@ $(document).ready(function () {
   // document.addEventListener('mousemove', setCursorPos);
 
 
-  // $('.mask').mousemove(function (e) {
+  // $(document).mousemove(function (e) {
   //   console.log(e.target);
   //   $('.mouse').css('top', `${e.pageY - ($('.mouse').height() / 2)}px`);
   //   $('.mouse').css('left', `${e.pageX - ($('.mouse').width() / 2)}px`);
@@ -36,43 +36,71 @@ $(document).ready(function () {
   //   }
   // });
 
-  /* 換頁滑動 - start */
+  /* ------------- 換頁滑動 - start ------------- */
   const body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
   const content = $('.content');
   let curPage = 0; // 初始第一頁
   const lastPages = content.length - 1; // 最後一頁
   let scrollLock = false; // 設定事件只執行一次 (滑動開關)
-  // mousewheel DOMMouseScroll
+
+
 
   // 觸碰裝置
   if ("ontouchstart" in window) {
-    alert("YES0");
+    // 取消 overflow hidden
+    $('body').css('overflow', 'auto');
 
-    // 監聽手指 touch 滑動事件
-    let startY;
+    $(window).scroll(function () {
 
-    function touchStart(e) {
-      startY = e.touches[0].pageY;
-    };
+      let windowHeight = $(window).height();
+      let windowScrollTop = $(window).scrollTop();
+      let documentHeight = $(document).height();
 
-    function touchMoveHandler(e) {
-      let moveEndY = e.changedTouches[0].pageY;
-      let Y = moveEndY - startY;
-      if (scrollLock) {
-        return
-      };
-      if (Y > 0) {
-        navigateUp();
-      } else if (Y < 0) {
-        navigateDown();
+      if (windowHeight + windowScrollTop === documentHeight) {
+        // scroll 隱藏
+        scrollAnimate.pause();
+        $('.scroll').css('opacity', '0');
+      } else if (windowScrollTop === 0) {
+        // scroll 顯示
+        scrollAnimate.play();
+        $('.scroll').css('opacity', '1');
       }
-    };
-    document.addEventListener('touchstart', touchStart);
-    document.addEventListener('touchmove', touchMoveHandler);
+
+    });
+
+    // 橫屏
+      if (window.orientation === 90 || window.orientation === -90) {
+        alert('請豎屏瀏覽獲得最佳體驗 ☺');
+      }
+
+    // // 監聽手指 touch 滑動事件
+    // let startY;
+
+    // function touchStart(e) {
+    //   startY = e.touches[0].pageY;
+    // };
+
+    // function touchMoveHandler(e) {
+    //   let moveEndY = e.changedTouches[0].pageY;
+    //   let Y = moveEndY - startY;
+    //   if (scrollLock) {
+    //     return
+    //   };
+    //   if (Y > 0) {
+    //     navigateUp();
+    //   } else if (Y < 0) {
+    //     navigateDown();
+    //   }
+    // };
+    // document.addEventListener('touchstart', touchStart);
+    // document.addEventListener('touchmove', touchMoveHandler);
+    // document.addEventListener('scroll', touchMoveHandler);
   } else {
+    $('body').css('overflow', 'hidden');
     // 滑鼠裝置
     // 監聽滑鼠滑動事件
     function wheelMoveHandler(e) {
+
       if (scrollLock) {
         return
       };
@@ -133,6 +161,10 @@ $(document).ready(function () {
 
   // 整頁往上移動
   function navigateUp() {
+    // scroll 顯示
+    scrollAnimate.play();
+    $('.scroll').css('opacity', '1');
+
     if (curPage === 0) {
       return;
     }
@@ -142,29 +174,40 @@ $(document).ready(function () {
 
   // 整頁往下移動
   function navigateDown() {
+    // scroll 隱藏
+    if (curPage === 2) {
+      scrollAnimate.pause();
+      $('.scroll').css('opacity', '0');
+    } else {
+      scrollAnimate.play();
+      $('.scroll').css('opacity', '1');
+    }
+
     if (curPage === lastPages) {
       return;
     }
     curPage++;
     pagination();
   };
-  /* 換頁滑動 - end */
+  /* ------------- 換頁滑動 - end ------------- */
 
 
 
-  // 側邊欄 Toggle 效果
+  /* ------------- 側邊欄 Toggle 效果 - start ------------- */
   $('.js-navToggler').click(function (e) {
     e.preventDefault();
     $('.js-navToggler').toggleClass('active');
     $('.nav__menu').toggleClass('active');
     $('.layout__side').toggleClass('active');
   });
+  /* ------------- 側邊欄 Toggle 效果 - end ------------- */
 
 
-  /* 裝置尺寸判斷 - start */
+
+  /* ------------- 裝置尺寸判斷 - start ------------- */
   // 00 下方文字 .content__subtitle 調整
   if ($(window).height() < 930) {
-    $('.content__subtitle').css('display', 'none');
+    $('.content__block__subtitle').css('display', 'none');
   }
 
   if ($(window).width() >= 1300) {
@@ -183,66 +226,23 @@ $(document).ready(function () {
   $(window).resize(function () {
     location.reload();
   });
-  /* 裝置尺寸判斷 - end */
-
+  /* ------------- 裝置尺寸判斷 - end ------------- */
 });
 
 
 
 
 
-
-// const blobCursor = (() => {  
-//     const cursor = document.querySelector('.mouse');
-//     // const cursorBack = document.querySelector('.mouseBack');
-//     // const LINKS = document.querySelectorAll('.nav__link');
-//     const setCursorPos = (e) => {
-//       const { pageX: posX, pageY: posY } = e;
-//       cursor.style.top = `${posY - (cursor.offsetHeight / 2)}px`;
-//       cursor.style.left = `${posX - (cursor.offsetWidth / 2)}px`;
-
-
-//       if(e.target.nodeName.match('A') || e.target.getAttribute('class') === 'goTop') {
-//         cursor.style.width = '80px';
-//         cursor.style.height = '80px';
-//         cursor.style.mixBlendMode = 'hard-light';
-//       } else {
-//         cursor.style.width = '55px';
-//         cursor.style.height = '55px';
-//         cursor.style.mixBlendMode = 'normal';
-//       }
-//     };
-//     document.addEventListener('mousemove', setCursorPos);
-
-//     // const setCursorHover = () => CURSOR.style.transform = 'scale(2.5)';
-//     // const removeCursorHover = () => CURSOR.style.transform = '';
-//     // LINKS.forEach(link => link.addEventListener('mouseover', setCursorHover));
-//     // LINKS.forEach(link => link.addEventListener('mouseleave', removeCursorHover));
-
-//   })();
-
-
-// $(document).ready(function () {
-//   $('.js-sharp-body').click(function (e) {
-//       $('.js-sharp-body').addClass('animate__zoomInDown');
-//   });
-// });
-
-
-/* Anime */
-// 載入動畫
-
+/* ------------- Anime - 載入動畫 - start ------------- */
 // 數字
 anime({
-  targets: '.content__num',
+  targets: '.content__block__num',
   translateX: ['100%', '0'],
   opacity: [0, 1],
   loop: 1,
   duration: 500,
   easing: 'linear'
 });
-
-
 
 function navMoveDesktop() {
   // nav
@@ -263,7 +263,6 @@ function navMoveDesktop() {
     loop: 1,
     duration: 200,
     delay: 1000,
-    // delay: (el, i) => 300 + 25 * i,
     easing: 'linear'
   });
 
@@ -288,7 +287,6 @@ function navMoveDesktop() {
   });
 }
 
-
 // logo
 anime({
   targets: '.logo span',
@@ -300,11 +298,9 @@ anime({
   easing: 'linear'
 });
 
-
-
 // 標題框線
 anime({
-  targets: ['.content__title--lineTop', '.content__title--lineBottom'],
+  targets: ['.content__block__title--lineTop', '.content__block__title--lineBottom'],
   width: ['0', '15%'],
   loop: 1,
   duration: 500,
@@ -313,7 +309,7 @@ anime({
 });
 
 anime({
-  targets: ['.content__title--lineRight', '.content__title--lineLeft'],
+  targets: ['.content__block__title--lineRight', '.content__block__title--lineLeft'],
   height: ['0', '50%'],
   loop: 1,
   duration: 500,
@@ -322,7 +318,7 @@ anime({
 });
 
 anime({
-  targets: '.content__title h3',
+  targets: '.content__block__title h3',
   translateX: ['-10%', '0'],
   opacity: [0, 1],
   loop: 1,
@@ -330,7 +326,6 @@ anime({
   delay: 650,
   easing: 'linear'
 });
-
 
 // goTop
 anime({
@@ -345,7 +340,7 @@ anime({
 
 // 底部文字
 anime({
-  targets: '.content__subtitle',
+  targets: ['.content__block__subtitle', '.scroll'],
   opacity: [0, 1],
   loop: 1,
   duration: 600,
@@ -391,21 +386,12 @@ anime({
   delay: 1500,
   easing: 'easeInOutQuad'
 });
+/* ------------- Anime - 載入動畫 - end ------------- */
 
 
-// 畫面動態
-// monster body
 
-
-// $('.monster__sharp').mouseover(function(e) {
-//   bodyM.pause();
-//   eyes.pause();
-// })
-// $('.monster__sharp').mouseout(function(e) {
-//   bodyM.play();
-//   eyes.play();
-// })
-
+/* ------------- Anime - 畫面動態 - start ------------- */
+// monster - body
 anime({
   targets: ['.monster__sharp', '.monster__round'],
   translateY: [0, 15],
@@ -415,7 +401,7 @@ anime({
   easing: 'linear'
 });
 
-// monster eyes
+// monster - eyes
 function eyesMoveDesktop() {
   anime.timeline({
       targets: ['.monster__eyeLeft--white', '.monster__eyeRight--white'],
@@ -475,7 +461,6 @@ function eyesMoveDesktop() {
       duration: 80
     });
 }
-
 
 function eyesMoveMobile() {
   anime.timeline({
@@ -537,24 +522,6 @@ function eyesMoveMobile() {
     });
 }
 
-// h2 
-// anime.timeline({
-//   targets: '.js-content-text h2',
-//   loop: true,
-//   easing: "linear"
-// })
-// .add({
-//   translateY: [{
-//       value: 0
-//     },
-//     {
-//       value: '-100%',
-//       delay: 1500
-//     }
-//   ],
-//   duration: 1000
-// })
-
 // seb 文字
 anime.timeline({
     targets: '.js-content-sub-text',
@@ -573,166 +540,93 @@ anime.timeline({
     duration: 1000
   });
 
-// anime({
-//   targets: '.js-content-sub',
-//   translateY: [0, '-200%'],
-//   loop: true,
-//   duration: 1000,
-//   // direction: 'alternate',
-//   easing: 'linear'
-// });
+let scrollAnimate = anime({
+  targets: '.scroll',
+  translateY: [0, 3],
+  opacity: [0.7, 1],
+  loop: true,
+  duration: 900,
+  direction: 'alternate',
+  easing: 'linear'
+});
+/* ------------- Anime - 畫面動態 - end ------------- */
 
 
 
 
 
+/* ------------- AOS - 載入 - start ------------- */
+  AOS.init({
+    duration: 800,
+    delay: 300,
+    once: false
+});
+/* ------------- AOS - 載入 - end ------------- */
 
 
 
 
 
+/* ------------- Swiper - 載入 - start ------------- */
+function swiperFn() {
 
-// let animation = anime.timeline({
-//     loop: true
-// })
-// .add({
-//     targets: '.js-sharp',
-//     // scale: [0, 1],
-//     translateY: [0, -5, 0 -5],
-//     duration: 1500,
-//     easing: "easeOutExpo",
-//     // elasticity: 600
-// });
-
-// anime({
-//   targets: '.js-sharp',
-//   points: '64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96',
-//   baseFrequency: 0,
-//   scale: 1,
-//   loop: true,
-//   direction: 'alternate',
-//   easing: 'easeInOutExpo'
-// });
-
-
-// anime({
-//   targets: '.js-sharp',
-//   translateX: [
-//     { value: 250, duration: 1000, delay: 500 },
-//     { value: 0, duration: 1000, delay: 500 }
-//   ],
-//   translateY: [
-//     { value: -40, duration: 500 },
-//     { value: 40, duration: 500, delay: 1000 },
-//     { value: 0, duration: 500, delay: 1000 }
-//   ],
-//   easing: 'easeOutElastic(1, .8)',
-//   loop: true
-// });
-
-
-// let animation = anime.timeline({
-//     loop: true
-// })
-// .add({
-//     targets: '.js-sharp-body',
-//     // translateY: [0, 30, 0, 30],
-//     // translateX: [0, 0 ,-30],
-//     rotate: [15, 0],
-//     scale: [0, 1],
-//     duration: 1500,
-//     elasticity: 600
-// }).add({
-//     targets: '.js-sharp-body',
-//     opacity: 0,
-//     duration: 1000,
-//     easing: "easeOutExpo",
-//     delay: 1000
-//   });
-
-// 載入 AOS
-//   AOS.init({
-//     // easing: 'ease',
-//     duration: 800,
-//     delay: 200,
-//     once: false
-// });
-
-
-// swiper
-function swiper() {
-  // 只在 index、product、product_detail 時執行
-  // 當裝置寬度為 768px 時執行
-  if ($(window).width() < 992) {
+  if (1200 <= $(window).width()) {
 
     // 載入 Swiper 
     const swiper = new Swiper('.swiper-container', {
       autoplay: {
-        delay: 10000,
-      },
-      slidesPerView: 2,
-      slidesPerColumn: 2,
-      spaceBetween: 15,
-      slidesPerGroup: 2,
-      loop: false,
-      // loopFillGroupWithBlank: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-
-  } else if (992 <= $(window).width() < 1200) {
-
-    // 載入 Swiper 
-    const swiper = new Swiper('.swiper-container', {
-      autoplay: {
-        delay: 5000,
-      },
-      slidesPerView: 2,
-      slidesPerColumn: 2,
-      spaceBetween: 30,
-      slidesPerGroup: 2,
-      loop: false,
-      // loopFillGroupWithBlank: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-
-  } else if (1200 <= $(window).width()) {
-
-    // 載入 Swiper 
-    const swiper = new Swiper('.swiper-container', {
-      autoplay: {
-        delay: 5000,
+        delay: 6000,
       },
       slidesPerView: 3,
       spaceBetween: 30,
       slidesPerGroup: 3,
-      // slidesPerColumn: 2,
       loop: false,
-      // loopFillGroupWithBlank: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
+      }
     });
 
-        // // 滑鼠摸到暫停輪播
-        swiper.el.onmouseover = function () {
-          swiper.autoplay.stop();
-        };
-    
-        // 滑鼠離開繼續輪播
-        swiper.el.onmouseleave = function () {
-          swiper.autoplay.start();
-        };
 
+    // 滑鼠摸到暫停輪播
+    swiper.el.onmouseover = function () {
+      swiper.autoplay.stop();
+    };
+
+    // 滑鼠離開繼續輪播
+    swiper.el.onmouseleave = function () {
+      swiper.autoplay.start();
+    };
+
+  } else if ($(window).width() < 1200) {
+
+    // 載入 Swiper 
+    const swiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 6000,
+      },
+      slidesPerView: 2,
+      // slidesPerColumn: 2,
+      spaceBetween: 30,
+      slidesPerGroup: 2,
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+
+    // 滑鼠摸到暫停輪播
+    swiper.el.onmouseover = function () {
+      swiper.autoplay.stop();
+    };
+
+    // 滑鼠離開繼續輪播
+    swiper.el.onmouseleave = function () {
+      swiper.autoplay.start();
+    };
   }
-
-  
-
 };
-swiper();
+swiperFn();
+/* ------------- Swiper - 載入 - end ------------- */
+

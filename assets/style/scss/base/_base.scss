@@ -1,8 +1,3 @@
-// *:focus {
-//     outline: none !important;
-//     box-shadow: none !important;
-// }
-
 body {
     background-color: $light;
     @include bg-material;
@@ -33,16 +28,6 @@ a {
         @include linear;
     }
 }
-
-// button {
-//     @include hover-linear(300ms);
-// }
-
-// input {
-//     -webkit-appearance: none; // Safari 和 Chrome，於 iOS 移除內建樣式
-//     -moz-appearance: none; // Firefox
-//     appearance: none;
-// }
 
 // 移除 BS4 h1-h6 的預設 margin-bottom
 h1,

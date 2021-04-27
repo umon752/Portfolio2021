@@ -46,16 +46,19 @@
                 color: lighten($primary, 10%);
             }
         }
+
         &:hover .nav__menu__link--num {
             background-color: $primary;
             color: white;
             @include linear;
         }
+
         &:hover .nav__menu__link--title {
             @include media-breakpoint-up(lg) {
                 transform: translateY(8px);
             }
         }
+
         &:hover .nav__menu__link--caption {
             @include media-breakpoint-up(lg) {
                 transform: translateY(-3px);
@@ -72,9 +75,11 @@
         position: inherit;
         @include linear;
     }
+
     &__menu__link--title {
         @include linear;
     }
+
     &__menu__link--caption {
         @include linear;
     }
@@ -103,6 +108,7 @@
             transform: translateX(50%) rotate(0deg);
             @include linear;
         }
+
         &::after {
             content: '';
             width: 30px;
@@ -126,6 +132,7 @@
                     right: 25px;
                 }
             }
+
             &::after {
                 bottom: 50%;
                 left: 13px;
@@ -136,8 +143,6 @@
                     left: 25px;
                 }
             }
-
-            
         }
     }
 }
@@ -153,9 +158,6 @@
         width: 80px;
     }
 
-    // @include media-breakpoint-up(xl) {
-    //     transform: translateY(-1px);
-    // }
     @include media-breakpoint-up(xxl) {
         transform: translateY(-1px);
     }
@@ -191,14 +193,14 @@
         width: 100%;
         height: 100%;
         transform-origin: 50% 100%;
-        
+
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         transition: clip-path 0.2s, -webkit-clip-path 0.2s;
         transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
     }
 
-    & > span {
+    &>span {
         overflow: hidden;
         mix-blend-mode: lighten;
     }
@@ -209,21 +211,13 @@
     }
 
     &:hover {
-        // width: 65px;
-        // height: 65px;
-
-        // @include media-breakpoint-up(md) {
-        //     width: 90px;
-        //     height: 90px;
-        // }
-
         &::before {
             transition-duration: 0.3s;
             -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
         }
 
-        & > span > span {
+        &>span>span {
             animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
         }
     }
@@ -231,16 +225,16 @@
 
 @keyframes MoveUpInitial {
     100% {
-        transform: translate3d(105%,0,0);
+        transform: translate3d(105%, 0, 0);
     }
 }
 
 @keyframes MoveUpEnd {
     0% {
-        transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%, 0, 0);
     }
+
     100% {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
     }
 }
-

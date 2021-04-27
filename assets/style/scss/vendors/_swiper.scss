@@ -8,6 +8,8 @@
     @include media-breakpoint-up(xl) {
         width: 35px;
         height: 35px;
+        background: $primary;
+        border-radius: 50%;
     }
 
     @include media-breakpoint-up(xxl) {
@@ -29,16 +31,58 @@
     }
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    font-size: 16px;
+.swiper-button-prev::after {
+    content: 'arrow_back_ios';
+    font-family:"Material Icons";
+    color: $primary;
+    font-size: 14px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 24px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        content: 'arrow_back';
+        color: white;
+        font-size: 24px;
+    }
+}
+.swiper-button-next::after {
+    content: 'arrow_forward_ios';
+    font-family:"Material Icons";
+    color: $primary;
+    font-size: 14px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 24px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        content: 'arrow_forward';
+        color: white;
+        font-size: 24px;
+    }
 }
 
 // 箭頭距離
 .swiper-button-prev {
-    left: -20px;
+    top: calc(100% - 30px);
+    left: 35%;
+
+    @include media-breakpoint-up(md) {
+        left: 45%;
+    }
 
     @include media-breakpoint-up(xl) {
+        top: 50%;
         left: -36px;
     }
 
@@ -48,9 +92,15 @@
 }
 
 .swiper-button-next {
-    right: -20px;
+    top: calc(100% - 30px);
+    right: 35%;
+
+    @include media-breakpoint-up(md) {
+        right: 45%;
+    }
 
     @include media-breakpoint-up(xl) {
+        top: 50%;
         right: -40px;
     }
     @include media-breakpoint-up(xxl) {
@@ -67,6 +117,10 @@
     height: 100%;
 }
 
+.swiper-wrapper {
+    align-items: center;
+}
+
 .swiper-slide {
     height: calc((100% - 15px) / 2);
     @include media-breakpoint-up(lg) {
@@ -78,8 +132,9 @@
 
 /* custom */
 .swiper__content {
-    height: 75%;
+    height: 100%;
     max-width: calc(100% - 30px);
+
     @include media-breakpoint-up(xl) {
         height: auto;
     }

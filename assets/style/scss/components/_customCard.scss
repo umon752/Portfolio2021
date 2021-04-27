@@ -1,5 +1,6 @@
 .customCard {
     height: 90%;
+
     @include media-breakpoint-up(md) {
         height: 85%;
     }
@@ -15,22 +16,23 @@
 
     &:hover>.customCard__imgMask {
         @include linear;
-        opacity: .5;
+        opacity: 0;
     }
 
     &:hover .customCard__imgIcon {
         @include linear;
-        opacity: .8;
+        opacity: 0;
     }
 
     &:hover .customCard__imgIcon--size {
         transition: all 100ms ease-out;
-        transform: translateY(0);
+        transform: translateY(100%);
     }
 
     &__img {
         width: 100%;
         @include linear;
+        
     }
 
     &__imgMask {
@@ -40,7 +42,7 @@
         top: 0;
         left: 0;
         background: $primary;
-        opacity: 0;
+        opacity: .5;
         @include linear;
 
 
@@ -52,14 +54,19 @@
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        opacity: 0;
+        opacity: .8;
         @include linear;
 
         &--size {
-            width: 80px;
-            height: 80px;
-            transform: translateY(100%);
+            width: 40px;
+            height: 40px;
+            transform: translateY(0);
             transition: all 100ms ease-out;
+
+            @include media-breakpoint-up(md) {
+                width: 80px;
+            height: 80px;
+            }
         }
 
         .material-icons {

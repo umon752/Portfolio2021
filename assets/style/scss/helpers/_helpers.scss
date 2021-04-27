@@ -22,6 +22,7 @@
     background-repeat: no-repeat;
 }
 
+// 背景材質
 @mixin bg-material {
     background-image: url("../../images/material.png");
     background-position: center center;
