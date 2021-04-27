@@ -69,9 +69,9 @@ $(document).ready(function () {
     });
 
     // 橫屏
-      if (window.orientation === 90 || window.orientation === -90) {
-        alert('請豎屏瀏覽獲得最佳體驗 ☺');
-      }
+    if (window.orientation === 90 || window.orientation === -90) {
+      alert('請豎屏瀏覽獲得最佳體驗 ☺');
+    }
 
     // // 監聽手指 touch 滑動事件
     // let startY;
@@ -97,6 +97,12 @@ $(document).ready(function () {
     // document.addEventListener('scroll', touchMoveHandler);
   } else {
     $('body').css('overflow', 'hidden');
+
+    // 變更視窗大小 >　重新載入頁面
+    $(window).resize(function () {
+      location.reload();
+    });
+
     // 滑鼠裝置
     // 監聽滑鼠滑動事件
     function wheelMoveHandler(e) {
@@ -207,7 +213,8 @@ $(document).ready(function () {
   /* ------------- 裝置尺寸判斷 - start ------------- */
   // 00 下方文字 .content__subtitle 調整
   if ($(window).height() < 930) {
-    $('.content__block__subtitle').css('display', 'none');
+    subtitleAnimate.pause();
+    $('.content__block__subtitle').css('opacity', '0');
   }
 
   if ($(window).width() >= 1300) {
@@ -221,11 +228,6 @@ $(document).ready(function () {
   } else {
     eyesMoveMobile();
   }
-
-  // 變更視窗大小 >　重新載入頁面
-  $(window).resize(function () {
-    location.reload();
-  });
   /* ------------- 裝置尺寸判斷 - end ------------- */
 });
 
@@ -339,7 +341,7 @@ anime({
 });
 
 // 底部文字
-anime({
+let subtitleAnimate = anime({
   targets: ['.content__block__subtitle', '.scroll'],
   opacity: [0, 1],
   loop: 1,
@@ -556,10 +558,10 @@ let scrollAnimate = anime({
 
 
 /* ------------- AOS - 載入 - start ------------- */
-  AOS.init({
-    duration: 800,
-    delay: 300,
-    once: false
+AOS.init({
+  duration: 800,
+  delay: 300,
+  once: false
 });
 /* ------------- AOS - 載入 - end ------------- */
 
@@ -629,4 +631,3 @@ function swiperFn() {
 };
 swiperFn();
 /* ------------- Swiper - 載入 - end ------------- */
-
